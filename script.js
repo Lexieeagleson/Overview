@@ -82,7 +82,7 @@ function createRepoCard(repo) {
                 ⭐ ${repo.stargazers_count}
             </span>
         </div>
-        <a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noopener noreferrer" class="repo-link">
+        <a href="https://lexieeagleson.github.io/${escapeHtml(repo.name)}" target="_blank" rel="noopener noreferrer" class="repo-link">
             View Repository →
         </a>
     `;
