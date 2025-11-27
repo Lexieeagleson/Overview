@@ -83,7 +83,7 @@ function createRepoCard(repo) {
             </span>
         </div>
         <a href="https://lexieeagleson.github.io/${escapeHtml(repo.name)}" target="_blank" rel="noopener noreferrer" class="repo-link">
-            View Repository →
+            Visit Site →
         </a>
     `;
 
