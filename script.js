@@ -4,6 +4,7 @@
 
 const GITHUB_USERNAME = 'Lexieeagleson';
 const GITHUB_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos`;
+const MAX_DESCRIPTION_LENGTH = 100;
 
 // Language color mapping for repository cards
 const languageColors = {
@@ -40,7 +41,7 @@ async function fetchRepositories() {
     try {
         const response = await fetch(GITHUB_API_URL, {
             headers: {
-                'Accept': 'application/vnd.github.v3+json'
+                'Accept': 'application/vnd.github+json'
             }
         });
 
@@ -63,8 +64,8 @@ function createRepoCard(repo) {
 
     const languageColor = languageColors[repo.language] || languageColors['default'];
     const description = repo.description || 'No description available';
-    const truncatedDescription = description.length > 100 
-        ? description.substring(0, 100) + '...' 
+    const truncatedDescription = description.length > MAX_DESCRIPTION_LENGTH 
+        ? description.substring(0, MAX_DESCRIPTION_LENGTH) + '...' 
         : description;
 
     card.innerHTML = `
